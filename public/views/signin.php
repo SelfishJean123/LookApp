@@ -10,9 +10,6 @@
 <body>
   <div class="wrapper">
     <header>
-      <div class="back-button">
-        <img src="public/img/chevron-back.png" alt="back button" />
-      </div>
       <div class="mini-logo">
         <img src="public/img/logo-black-mini.svg" alt="mini logo" />
       </div>
@@ -49,15 +46,20 @@
       <section class="sign-in">
         <div class="sign-in-form">
           <form action="signin" method="POST">
-            <?php if (isset($messages)) {
-              foreach ($messages as $message) {
-                echo $message;
-              }
-            }
-            ?>
             <input name="email" type="email" placeholder="Email" />
             <input type="password" name="password" placeholder="Password" />
-            <button type="submit"></button>
+            <p class="form-messages">
+              <?php
+              if (isset($messages)) {
+                foreach ($messages as $message) {
+                  echo $message;
+                }
+              }
+              ?>
+            </p>
+            <button type="submit" class="function-button">
+              Sign In
+            </button>
           </form>
         </div>
       </section>

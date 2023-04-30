@@ -10,9 +10,6 @@
 <body>
   <div class="wrapper">
     <header>
-      <div class="back-button">
-        <img src="public/img/chevron-back.png" alt="back button" />
-      </div>
       <div class="mini-logo">
         <img src="public/img/logo-black-mini.svg" alt="mini logo" />
       </div>
@@ -46,24 +43,27 @@
       </section>
 
       <section class="add-product-section">
+        <a href="/products" class="close-button">
+          <span class="cross-icon"></span>
+        </a>
         <h4>Add New Product</h4>
-        <form action="addproduct" method="POST" enctype="multipart/form-data">
-          <input name="name" type="text" placeholder="Product's name" />
-          <textarea name="ingredients" id="" cols="30" rows="5" placeholder="Product's ingredients"></textarea>
-          <input name="file" type="file" placeholder="Product's image" />
-          <button type="submit">ADD</button>
-
-          <div class="messages">
-            <?php
-            if (isset($messages)) {
-              foreach ($messages as $message) {
-                echo $message;
+        <div class="add-product-form">
+          <form action="addproduct" method="POST" enctype="multipart/form-data">
+            <input name="name" type="text" placeholder="Product's name" />
+            <textarea name="ingredients" id="" cols="30" rows="5" placeholder="Product's ingredients"></textarea>
+            <input name="file" type="file" placeholder="Product's image" class="upload-file-input" />
+            <p class="form-messages">
+              <?php
+              if (isset($messages)) {
+                foreach ($messages as $message) {
+                  echo $message;
+                }
               }
-            }
-            ?>
-          </div>
-
-        </form>
+              ?>
+            </p>
+            <button type="submit" class="function-button">ADD</button>
+          </form>
+        </div>
       </section>
     </main>
 

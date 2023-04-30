@@ -10,9 +10,6 @@
 <body>
   <div class="wrapper">
     <header>
-      <div class="back-button">
-        <img src="public/img/chevron-back.png" alt="back button" />
-      </div>
       <div class="mini-logo">
         <img src="public/img/logo-black-mini.svg" alt="mini logo" />
       </div>
@@ -45,7 +42,6 @@
         </p>
 
         <a class="function-button" href="/addproduct">
-          <i class="fa-solid fa-square-plus"></i>
           Add new product
         </a>
 

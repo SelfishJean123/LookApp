@@ -10,9 +10,6 @@
 <body>
   <div class="wrapper">
     <header>
-      <div class="back-button">
-        <img src="public/img/chevron-back.png" alt="back button" />
-      </div>
       <div class="mini-logo">
         <img src="public/img/logo-black-mini.svg" alt="mini logo" />
       </div>
