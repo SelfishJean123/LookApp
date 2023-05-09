@@ -14,14 +14,14 @@ class DefaultController extends AppController
         $this->render('signin');
     }
 
-    public function encyclopedia()
+    public function signup()
     {
-        $this->render('encyclopedia');
+        $this->render('signup');
     }
 
-    public function products()
+    public function contact()
     {
-        $this->render('products');
+        $this->render('contact');
     }
 
     public function about()
