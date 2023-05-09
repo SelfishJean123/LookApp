@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
 <head>
+  <title>Look Up | Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="public/css/style.css" />
-  <title>Look Up</title>
 </head>
 
 <body>
@@ -18,18 +18,18 @@
 
         <ul>
           <li><a href="signin">Sign In</a></li>
+          <li><a href="signup">Sign Up</a></li>
           <li><a href="about">About Look Up</a></li>
           <li><a href="products">Products</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="contact">Contact</a></li>
         </ul>
       </label>
     </header>
 
     <footer>
-      <div class="logo">
+      <a href="/" class="logo">
         <img src="public/img/logo-black.svg" alt="Look Up logo" />
-      </div>
+      </a>
     </footer>
   </div>
 </body>

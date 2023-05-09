@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 
 <head>
+  <title>Look Up | About Look Up</title>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="public/css/style.css" />
-  <title>Look Up</title>
   <script src="https://kit.fontawesome.com/dcece42733.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <div class="wrapper">
     <header>
-      <div class="mini-logo">
+      <a href="/" class="mini-logo">
         <img src="public/img/logo-black-mini.svg" alt="mini logo" />
-      </div>
+      </a>
       <label>
         <input type="checkbox" />
 
@@ -22,10 +22,10 @@
 
         <ul>
           <li><a href="signin">Sign In</a></li>
+          <li><a href="signup">Sign Up</a></li>
           <li><a href="about">About Look Up</a></li>
           <li><a href="products">Products</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="contact">Contact</a></li>
         </ul>
       </label>
     </header>
@@ -95,9 +95,9 @@
     </main>
 
     <footer class="footer-bg">
-      <div class="logo">
+      <a href="/" class="logo">
         <img src="public/img/logo-white.svg" alt="Look Up logo" />
-      </div>
+      </a>
       <div class="copyrights">
         <p>© 2023 Look Up. All rights reserved</p>
       </div>

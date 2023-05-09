@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 
 <head>
+  <title>Look Up | Products</title>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="public/css/style.css" />
-  <title>Look Up</title>
+  <script src="../../public/js/search.js" type="text/javascript" defer></script>
+  <script src="../../public/js/statistics.js" type="text/javascript" defer></script>
   <script src="https://kit.fontawesome.com/dcece42733.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
   <div class="wrapper">
     <header>
-      <div class="mini-logo">
+      <a href="/" class="mini-logo">
         <img src="public/img/logo-black-mini.svg" alt="mini logo" />
-      </div>
+      </a>
       <label>
         <input type="checkbox" />
 
@@ -22,10 +24,10 @@
 
         <ul>
           <li><a href="signin">Sign In</a></li>
+          <li><a href="signup">Sign Up</a></li>
           <li><a href="about">About Look Up</a></li>
           <li><a href="products">Products</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="contact">Contact</a></li>
         </ul>
       </label>
     </header>
@@ -41,112 +43,58 @@
           et expedita distinctio.
         </p>
 
-        <a class="function-button" href="/addproduct">
+        <a class="function-button" href="/addProduct">
           Add new product
         </a>
 
-        <form action="">
-          <input name="text" type="text" placeholder="Search for product..." />
-        </form>
+        <input name="search-for-product" type="text" placeholder="Search for product..." />
       </section>
 
       <section class="products">
-        <div class="product-tile">
-          <div class="image">
-            <img src="public/uploads/3.png" alt="" />
-          </div>
-          <div class="rating-and-reviews">
-            <h6>189 REVIEWS</h6>
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star-half"></i>
+        <?php foreach ($products as $product): ?>
+          <div class="product-tile" id="<?= $product->getId(); ?>">
+            <div class="image">
+              <img src="public/uploads/<?= $product->getFile(); ?>" alt="" />
             </div>
-            <div class="recommendation">
-              <i class="fa-solid fa-face-smile"></i>
-            </div>
-          </div>
-          <div class="name">
-            <h5>
-              Bio Oil Olejek do twarzy
-            </h5>
-          </div>
-        </div>
-
-        <div class="product-tile">
-          <div class="image">
-            <img src="public/uploads/3.png" alt="" />
-          </div>
-          <div class="rating-and-reviews">
-            <h6>189 REVIEWS</h6>
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star-half"></i>
-            </div>
-            <div class="recommendation">
-              <i class="fa-solid fa-face-meh"></i>
+            <div class="name">
+              <h5>
+                <?= $product->getName(); ?>
+              </h5>
+              <div class="favourites">
+                <h6>
+                  <?= $product->getFavourites(); ?>
+                </h6>
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
-          <div class="name">
-            <h5>
-              Bio Oil Olejek do twarzy
-            </h5>
-          </div>
-        </div>
-
-        <div class="product-tile">
-          <div class="image">
-            <img src="public/uploads/3.png" alt="" />
-          </div>
-          <div class="rating-and-reviews">
-            <h6>189 REVIEWS</h6>
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star-half"></i>
-            </div>
-            <div class="recommendation">
-              <i class="fa-solid fa-face-frown"></i>
-            </div>
-          </div>
-          <div class="name">
-            <h5>
-              Bio Oil Olejek do twarzy
-            </h5>
-          </div>
-        </div>
-
-        <div class="product-tile">
-          <div class="image">
-            <img src="public/uploads/3.png" alt="" />
-          </div>
-          <div class="rating-and-reviews">
-            <h6>189 REVIEWS</h6>
-            <div class="stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star-half"></i>
-            </div>
-            <div class="recommendation">
-              <i class="fa-solid fa-face-meh-blank"></i>
-            </div>
-          </div>
-          <div class="name">
-            <h5>
-              Bio Oil Olejek do twarzy
-            </h5>
-          </div>
-        </div>
+        <?php endforeach; ?>
       </section>
     </main>
 
     <footer class="footer-bg">
-      <div class="logo">
+      <a href="/" class="logo">
         <img src="public/img/logo-white.svg" alt="Look Up logo" />
-      </div>
+      </a>
       <div class="copyrights">
         <p>© 2023 Look Up. All rights reserved</p>
       </div>
     </footer>
   </div>
 </body>
+
+<template id="product-template">
+  <div class='product-tile'>
+    <div class='image'>
+      <img src='' alt='' />
+    </div>
+    <div class='name'>
+      <h5></h5>
+      <div class="favourites">
+        <h6>
+        </h6>
+        <i class="fa-regular fa-heart"></i>
+      </div>
+    </div>
+  </div>
+</template>
