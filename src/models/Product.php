@@ -2,17 +2,31 @@
 
 class Product
 {
+    private $id;
     private $brand;
     private $name;
     private $ingredients;
     private $file;
+    private $favourites;
 
-    public function __construct($brand, $name, $ingredients, $file)
+    public function __construct($id = null, $brand, $name, $ingredients, $file, $favourites = 0)
     {
+        $this->id = $id;
         $this->brand = $brand;
         $this->name = $name;
         $this->ingredients = $ingredients;
         $this->file = $file;
+        $this->favourites = $favourites;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 
     public function getBrand()
@@ -53,5 +67,15 @@ class Product
     public function setFile($file)
     {
         $this->file = $file;
+    }
+
+    public function getFavourites()
+    {
+        return $this->favourites;
+    }
+
+    public function setFavourites($favourites)
+    {
+        $this->favourites = $favourites;
     }
 }
