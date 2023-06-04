@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 
 <head>
-  <title>Look Up | Products</title>
+  <title>Look Up | Sign Up</title>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="public/css/style.css" />
+  <script src="../../public/js/script.js" type="text/javascript" defer></script>
   <script src="https://kit.fontawesome.com/dcece42733.js" crossorigin="anonymous"></script>
 </head>
 
@@ -32,26 +33,29 @@
 
     <main>
       <section class="view-description">
-        <h2>Products</h2>
+        <h2>Sign Up</h2>
         <p>
           At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-          atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
-          sunt in
+          atque
+          corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in
           culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est
-          et expedita distinctio.
+          et
+          expedita distinctio.
         </p>
       </section>
 
-      <section class="add-product-section">
-        <a href="/products" class="close-button">
-          <span class="cross-icon"></span>
-        </a>
-        <h4>Add New Product</h4>
-        <div class="add-product-form">
-          <form action="addProduct" method="POST" enctype="multipart/form-data">
-            <input name="name" type="text" placeholder="Product's name" />
-            <textarea name="ingredients" cols="30" rows="5" placeholder="Product's ingredients"></textarea>
-            <input name="file" type="file" placeholder="Product's image" class="upload-file-input" />
+      <section class="sign-up">
+        <div class="sign-up-form">
+          <form action="signup" method="POST">
+            <input name="name" type="text" placeholder="Name" />
+            <input name="surname" type="text" placeholder="Surname" />
+
+            <input name="mobile" type="text" placeholder="Mobile" />
+            <input name="email" type="email" placeholder="Email" />
+
+            <input name="password" type="password" placeholder="Password" />
+            <input name="confirmedPassword" type="password" placeholder="Confirm password" />
+
             <p class="form-messages">
               <?php
               if (isset($messages)) {
@@ -61,7 +65,9 @@
               }
               ?>
             </p>
-            <button type="submit" class="function-button">ADD</button>
+            <button type="submit" class="function-button">
+              Sign Up
+            </button>
           </form>
         </div>
       </section>
@@ -75,7 +81,5 @@
         <p>© 2023 Look Up. All rights reserved</p>
       </div>
     </footer>
-
-    <div class="overlay"></div>
   </div>
 </body>
