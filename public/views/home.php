@@ -2,29 +2,12 @@
 
 <head>
   <title>Look Up | Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="public/css/style.css" />
+  <?php include('shared/head-links.php') ?>
 </head>
 
 <body>
   <div class="wrapper bg">
-    <header>
-      <label>
-        <input type="checkbox" />
-
-        <span class="menu">
-          <span class="hamburger"></span>
-        </span>
-
-        <ul>
-          <li><a href="signin">Sign In</a></li>
-          <li><a href="signup">Sign Up</a></li>
-          <li><a href="about">About Look Up</a></li>
-          <li><a href="products">Products</a></li>
-          <li><a href="contact">Contact</a></li>
-        </ul>
-      </label>
-    </header>
+    <?php include('shared/header.php') ?>
 
     <footer>
       <a href="/" class="logo">

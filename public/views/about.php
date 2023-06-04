@@ -2,33 +2,12 @@
 
 <head>
   <title>Look Up | About Look Up</title>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="public/css/style.css" />
-  <script src="https://kit.fontawesome.com/dcece42733.js" crossorigin="anonymous"></script>
+  <?php include('shared/head-links.php') ?>
 </head>
 
 <body>
   <div class="wrapper">
-    <header>
-      <a href="/" class="mini-logo">
-        <img src="public/img/logo-black-mini.svg" alt="mini logo" />
-      </a>
-      <label>
-        <input type="checkbox" />
-
-        <span class="menu">
-          <span class="hamburger"></span>
-        </span>
-
-        <ul>
-          <li><a href="signin">Sign In</a></li>
-          <li><a href="signup">Sign Up</a></li>
-          <li><a href="about">About Look Up</a></li>
-          <li><a href="products">Products</a></li>
-          <li><a href="contact">Contact</a></li>
-        </ul>
-      </label>
-    </header>
+    <?php include('shared/header.php') ?>
 
     <main>
       <section class="view-description">
@@ -94,13 +73,6 @@
       </section>
     </main>
 
-    <footer class="footer-bg">
-      <a href="/" class="logo">
-        <img src="public/img/logo-white.svg" alt="Look Up logo" />
-      </a>
-      <div class="copyrights">
-        <p>© 2023 Look Up. All rights reserved</p>
-      </div>
-    </footer>
+    <?php include('shared/footer.php') ?>
   </div>
 </body>
