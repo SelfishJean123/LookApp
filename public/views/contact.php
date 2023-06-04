@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-  <title>Look Up | Sign In</title>
+  <title>Look Up | Contact</title>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="public/css/style.css" />
   <script src="https://kit.fontawesome.com/dcece42733.js" crossorigin="anonymous"></script>
@@ -32,35 +32,20 @@
 
     <main>
       <section class="view-description">
-        <h2>Sign In</h2>
+        <h2>Contact Look Up</h2>
         <p>
-          At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-          atque
-          corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in
-          culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est
-          et
-          expedita distinctio.
+          In case of any questions, requests, objections, please contat us via e-mail or phone number.
         </p>
       </section>
 
-      <section class="sign-in">
-        <div class="sign-in-form">
-          <form action="signin" method="POST">
-            <input name="email" type="email" placeholder="Email" />
-            <input type="password" name="password" placeholder="Password" />
-            <p class="form-messages">
-              <?php
-              if (isset($messages)) {
-                foreach ($messages as $message) {
-                  echo $message;
-                }
-              }
-              ?>
-            </p>
-            <button type="submit" class="function-button">
-              Sign In
-            </button>
-          </form>
+      <section class="contact-section">
+        <div class="contact-item">
+          <i class="fa-solid fa-at"></i>
+          <h5>lookup@lookup.com</h5>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-phone-flip"></i>
+          <h5>+44 123 456 789</h5>
         </div>
       </section>
     </main>
