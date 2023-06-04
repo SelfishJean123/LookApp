@@ -1,0 +1,463 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,300;0,400;0,500;0,600;1,400&display=swap");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: "Kanit", sans-serif;
+  font-size: 1.4em;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+}
+body .wrapper {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+  width: 100vw;
+}
+body .wrapper.bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../img/bg.jpg");
+  background-color: transparent;
+}
+body .wrapper header {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  padding: 15px 15px 0 15px;
+  width: 100%;
+}
+body .wrapper header a.mini-logo {
+  max-width: 115px;
+  width: 35%;
+}
+body .wrapper header a.mini-logo img {
+  width: 100%;
+}
+body .wrapper header label .menu {
+  background: #401b34;
+  border-radius: 0 0 0 100px;
+  cursor: pointer;
+  height: 90px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.5s ease-in-out;
+  width: 90px;
+  z-index: 50;
+}
+body .wrapper header label .menu .hamburger {
+  background: #fff;
+  display: block;
+  height: 2px;
+  position: absolute;
+  right: 20px;
+  top: 31px;
+  transform-origin: center;
+  transition: 0.5s ease-in-out;
+  width: 30px;
+}
+body .wrapper header label .menu .hamburger::before, body .wrapper header label .menu .hamburger::after {
+  background: #fff;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+  width: 100%;
+}
+body .wrapper header label .menu .hamburger::before {
+  top: -10px;
+}
+body .wrapper header label .menu .hamburger::after {
+  bottom: -10px;
+}
+body .wrapper header label ul {
+  list-style: none;
+  opacity: 0;
+  position: absolute;
+  right: 45px;
+  top: 80px;
+  transition: 0.5s 0s ease-in-out;
+  z-index: -1;
+}
+body .wrapper header label ul li a {
+  color: #fff;
+  display: block;
+  font-size: 0.8em;
+  margin-bottom: 1em;
+  text-decoration: none;
+}
+body .wrapper header label input {
+  display: none;
+}
+body .wrapper header label input:checked + .menu {
+  border-radius: 0;
+  height: 100vh;
+  width: 245px;
+}
+body .wrapper header label input:checked + .menu .hamburger {
+  transform: rotate(45deg);
+}
+body .wrapper header label input:checked + .menu .hamburger:before, body .wrapper header label input:checked + .menu .hamburger:after {
+  top: 0;
+  bottom: 0;
+  transform: rotate(90deg);
+}
+body .wrapper header label input:checked + .menu + ul {
+  opacity: 1;
+  z-index: 60;
+}
+body .wrapper main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+}
+body .wrapper main section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1200px;
+  text-align: center;
+}
+body .wrapper main section form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 35px 0;
+}
+body .wrapper main section input,
+body .wrapper main section textarea {
+  background: transparent;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 2px 2px 8px -2px rgba(0, 0, 0, 0.75);
+  font-family: "Kanit", sans-serif;
+  height: 40px;
+  margin: 0 auto 15px auto;
+  outline: none;
+  padding: 6px 14px;
+  width: 280px;
+}
+body .wrapper main section input.upload-file-input,
+body .wrapper main section textarea.upload-file-input {
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+body .wrapper main section input.upload-file-input::-webkit-file-upload-button,
+body .wrapper main section textarea.upload-file-input::-webkit-file-upload-button {
+  background: #a74713;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 2px 2px 8px -2px rgba(0, 0, 0, 0.75);
+  color: #fff;
+  cursor: pointer;
+  font-family: "Kanit", sans-serif;
+  margin: 0 15px 0 0;
+  padding: 6px 14px;
+}
+body .wrapper main section textarea {
+  height: auto;
+  padding: 10px 14px;
+}
+body .wrapper main section p.form-messages {
+  color: #a74713;
+  font-size: 16px;
+  margin: 0 auto 15px auto;
+}
+body .wrapper main section a.function-button,
+body .wrapper main section button.function-button {
+  background: #387323;
+  border-radius: 8px;
+  border: none;
+  box-shadow: 2px 2px 8px -2px rgba(0, 0, 0, 0.75);
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 300;
+  height: 30px;
+  margin: 0 auto 15px auto;
+  outline: none;
+  padding: 5px 14px;
+  text-decoration: none;
+  transition: 0.5s ease-in-out;
+  width: 280px;
+}
+body .wrapper main section a.function-button:hover,
+body .wrapper main section button.function-button:hover {
+  background: #325032;
+}
+body .wrapper main section a.close-button {
+  cursor: pointer;
+  height: 60px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+}
+body .wrapper main section a.close-button .cross-icon {
+  background: #401b34;
+  display: block;
+  height: 2px;
+  position: absolute;
+  right: 20px;
+  top: 31px;
+  transform-origin: center;
+  transform: rotate(45deg);
+  width: 30px;
+}
+body .wrapper main section a.close-button .cross-icon::before, body .wrapper main section a.close-button .cross-icon::after {
+  background: #401b34;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transform: rotate(90deg);
+  width: 100%;
+}
+body .wrapper main section.view-description h2 {
+  color: #401b34;
+  font-size: 1em;
+  margin: 0 15px;
+}
+body .wrapper main section.view-description p {
+  font-size: 0.6em;
+  font-weight: 300;
+  margin: 30px 15px;
+  max-width: 768px;
+}
+body .wrapper main section.sign-in .invalid, body .wrapper main section.sign-up .invalid {
+  border: 3px solid red;
+  border-radius: 5px;
+  box-shadow: 0 0 3px red;
+  outline: none;
+}
+body .wrapper main section.team {
+  flex-direction: row;
+  justify-content: space-between;
+}
+body .wrapper main section.team .team-member {
+  display: flex;
+  flex-direction: column;
+  max-width: 150px;
+  width: 30%;
+}
+body .wrapper main section.team .team-member .photo {
+  width: 100%;
+}
+body .wrapper main section.team .team-member .photo img {
+  border-radius: 50%;
+  width: 100%;
+}
+body .wrapper main section.team .team-member h5 {
+  font-size: 0.6em;
+  margin: 0;
+}
+body .wrapper main section.team .team-member .contact a {
+  font-size: 0.8em;
+}
+body .wrapper main section.products .product-tile {
+  background-color: #e7b295;
+  border: 1px solid #c9c9c9;
+  margin: 5px;
+  padding: 0;
+  position: relative;
+  width: 90%;
+  z-index: 1;
+}
+body .wrapper main section.products .product-tile .image {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50vw;
+  max-height: 270px;
+}
+body .wrapper main section.products .product-tile .image img {
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+body .wrapper main section.products .product-tile .name {
+  align-items: start;
+  background: #e7b295;
+  display: flex;
+  height: auto;
+  justify-content: space-between;
+  padding: 10px;
+  position: relative;
+  z-index: 2;
+}
+body .wrapper main section.products .product-tile .name h5 {
+  color: #a74713;
+  display: block;
+  font-size: 0.5em;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+  text-align: left;
+}
+body .wrapper main section.products .product-tile .name .favourites {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+body .wrapper main section.products .product-tile .name .favourites h6 {
+  font-size: 0.5em;
+  line-height: 1;
+  margin: 0;
+}
+body .wrapper main section.products .product-tile .name .favourites i {
+  font-size: 0.6em;
+  line-height: 1;
+  margin: 0 5px;
+}
+body .wrapper main section.products .product-tile .name .favourites.clicked i {
+  font-weight: 600;
+}
+body .wrapper main section.add-product-section {
+  background: #fff;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.75);
+  height: auto;
+  left: max(5%, 50% - 225px);
+  max-width: 450px;
+  position: absolute;
+  top: 20%;
+  width: 90%;
+  z-index: 80;
+}
+body .wrapper main section.add-product-section h4 {
+  color: #387323;
+  margin: 45px auto 30px auto;
+}
+body .wrapper main section.add-product-section .add-product-form form input,
+body .wrapper main section.add-product-section .add-product-form form textarea,
+body .wrapper main section.add-product-section .add-product-form form button.function-button {
+  width: 90%;
+}
+body .wrapper main section.contact-section .contact-item {
+  margin: 0 0 30px 0;
+}
+body .wrapper main section.contact-section .contact-item i {
+  font-size: 0.6em;
+  color: #a74713;
+}
+body .wrapper main section.contact-section .contact-item h5 {
+  font-size: 0.8em;
+  margin: 0;
+}
+body .wrapper footer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 30px 30px 15px 30px;
+  width: 100%;
+}
+body .wrapper footer.footer-bg {
+  background: #387323;
+}
+body .wrapper footer .logo {
+  display: flex;
+  max-width: 300px;
+  width: 60%;
+}
+body .wrapper footer .logo img {
+  width: 100%;
+}
+body .wrapper footer .copyrights p {
+  color: #fff;
+  font-size: 0.6em;
+  font-weight: 200;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+body .wrapper .overlay {
+  background: #000;
+  height: 100%;
+  opacity: 0.5;
+  position: fixed;
+  width: 100%;
+  z-index: 70;
+}
+
+@media only screen and (min-width: 500px) {
+  body .wrapper main section.products {
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  body .wrapper main section.products .product-tile {
+    width: calc(50% - 10px);
+  }
+  body .wrapper main section.products .product-tile .image {
+    height: 40vw;
+  }
+}
+@media only screen and (min-width: 768px) {
+  body .wrapper header {
+    padding: 15px 30px 0 30px;
+  }
+  body .wrapper header label .menu {
+    opacity: 0.9;
+  }
+  body .wrapper main section.products .product-tile {
+    width: calc(25% - 10px);
+  }
+  body .wrapper main section.products .product-tile .image {
+    height: 20vw;
+  }
+  body .wrapper main section.add-product-section .add-product-form form input,
+  body .wrapper main section.add-product-section .add-product-form form textarea,
+  body .wrapper main section.add-product-section .add-product-form form button.function-button {
+    width: 280px;
+  }
+  body .wrapper footer {
+    flex-direction: row;
+    margin-top: 45px;
+  }
+  body .wrapper footer .logo {
+    width: 30%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  body .wrapper main section.view-description h2 {
+    font-size: 1.2em;
+  }
+  body .wrapper main section.team .team-member h5 {
+    font-size: 0.8em;
+    margin: 10px 0 0 0;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  body .wrapper header {
+    padding: 15px 45px 0 45px;
+  }
+  body .wrapper footer {
+    padding: 25px 45px 10px 45px;
+  }
+}/*# sourceMappingURL=style.css.map */
