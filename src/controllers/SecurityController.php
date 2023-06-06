@@ -42,24 +42,22 @@ class SecurityController extends AppController
             return $this->render('signup');
         }
 
-        $name = $_POST['name'];
-        $surname = $_POST['surname'];
-        $mobile = $_POST['mobile'];
         $email = $_POST['email'];
         $password = $_POST['password'];
         $confirmedPassword = $_POST['confirmedPassword'];
+        $name = $_POST['name'];
+        $surname = $_POST['surname'];
+        $mobile = $_POST['mobile'];
 
         if ($password !== $confirmedPassword) {
             return $this->render('signup', ['messages' => ['You have provided two different passwords!']]);
         }
 
         // TODO try to use better hash function
-        $user = new User($name, $surname, $mobile, $email, md5($password));
+        $user = new User($email, md5($password), $name, $surname, $mobile);
         $user->setMobile($mobile);
         $userRepository->addUser($user);
 
         return $this->render('signin', ['messages' => ['You have been succesfully signed up!']]);
-
-        // $user = $userRepository->getUser($email);
     }
 }
