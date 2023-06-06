@@ -9,17 +9,17 @@ class User
     private $password;
 
     public function __construct(
+        string $email,
+        string $password,
         string $name,
         string $surname,
-        string $mobile,
-        string $email,
-        string $password
+        string $mobile
     ) {
+        $this->email = $email;
+        $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
         $this->mobile = $mobile;
-        $this->email = $email;
-        $this->password = $password;
     }
 
     public function getName(): string
