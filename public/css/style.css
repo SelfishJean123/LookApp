@@ -33,6 +33,21 @@ body .wrapper.bg {
   background-image: url("../img/bg.jpg");
   background-color: transparent;
 }
+body .wrapper.bg .mini-logo {
+  display: none;
+}
+body .wrapper.bg footer {
+  background: none;
+}
+body .wrapper.bg footer .logo img.logo-white {
+  display: none;
+}
+body .wrapper.bg footer .logo img.logo-black {
+  display: block;
+}
+body .wrapper.bg footer .copyrights {
+  display: none;
+}
 body .wrapper header {
   align-items: center;
   display: flex;
@@ -205,7 +220,9 @@ body .wrapper main section a.function-button:hover,
 body .wrapper main section button.function-button:hover {
   background: #325032;
 }
-body .wrapper main section a.close-button {
+body .wrapper main section button.close-button {
+  background: none;
+  border: none;
   cursor: pointer;
   height: 60px;
   position: absolute;
@@ -213,7 +230,7 @@ body .wrapper main section a.close-button {
   top: 0;
   width: 60px;
 }
-body .wrapper main section a.close-button .cross-icon {
+body .wrapper main section button.close-button .cross-icon {
   background: #401b34;
   display: block;
   height: 2px;
@@ -224,7 +241,7 @@ body .wrapper main section a.close-button .cross-icon {
   transform: rotate(45deg);
   width: 30px;
 }
-body .wrapper main section a.close-button .cross-icon::before, body .wrapper main section a.close-button .cross-icon::after {
+body .wrapper main section button.close-button .cross-icon::before, body .wrapper main section button.close-button .cross-icon::after {
   background: #401b34;
   bottom: 0;
   content: "";
@@ -234,6 +251,33 @@ body .wrapper main section a.close-button .cross-icon::before, body .wrapper mai
   top: 0;
   transform: rotate(90deg);
   width: 100%;
+}
+body .wrapper main section .modal {
+  background: #fff;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.75);
+  height: auto;
+  left: max(5%, 50% - 225px);
+  max-width: 450px;
+  position: absolute;
+  top: 20%;
+  width: 90%;
+  z-index: 80;
+  display: none;
+}
+body .wrapper main section .modal h4 {
+  color: #387323;
+  margin: 45px auto 30px auto;
+}
+body .wrapper main section .modal p {
+  font-size: 0.8em;
+}
+body .wrapper main section .modal .form-wrapper form input,
+body .wrapper main section .modal .form-wrapper form textarea,
+body .wrapper main section .modal .form-wrapper form button.function-button {
+  width: 90%;
+}
+body .wrapper main section .modal.open {
+  display: block;
 }
 body .wrapper main section.view-description h2 {
   color: #401b34;
@@ -275,15 +319,18 @@ body .wrapper main section.team .team-member h5 {
 }
 body .wrapper main section.team .team-member .contact a {
   font-size: 0.8em;
+  text-decoration: none;
+  color: #a74713;
+}
+body .wrapper main section.products {
+  margin-top: 1em;
 }
 body .wrapper main section.products .product-tile {
   background-color: #e7b295;
   border: 1px solid #c9c9c9;
   margin: 5px;
   padding: 0;
-  position: relative;
   width: 90%;
-  z-index: 1;
 }
 body .wrapper main section.products .product-tile .image {
   align-items: center;
@@ -306,8 +353,6 @@ body .wrapper main section.products .product-tile .name {
   height: auto;
   justify-content: space-between;
   padding: 10px;
-  position: relative;
-  z-index: 2;
 }
 body .wrapper main section.products .product-tile .name h5 {
   color: #a74713;
@@ -318,45 +363,112 @@ body .wrapper main section.products .product-tile .name h5 {
   margin: 0;
   text-align: left;
 }
-body .wrapper main section.products .product-tile .name .favourites {
+body .wrapper main section.products .product-tile .name form {
   cursor: pointer;
-  display: flex;
-  align-items: center;
   margin: 0;
   padding: 0 0 0 10px;
 }
-body .wrapper main section.products .product-tile .name .favourites h6 {
-  font-size: 0.5em;
-  line-height: 1;
+body .wrapper main section.products .product-tile .name form input {
+  display: none;
+}
+body .wrapper main section.products .product-tile .name form button.function-button {
+  background: #401b34;
+  width: auto;
+}
+body .wrapper main section.product-details {
+  display: flex;
+  flex-direction: column;
+}
+body .wrapper main section.product-details .product-image {
+  width: 100%;
+}
+body .wrapper main section.product-details .product-image img {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto 0.5em auto;
+}
+body .wrapper main section.product-details .product-description {
+  width: 100%;
+  text-align: center;
+  padding: 0 1em;
+}
+body .wrapper main section.product-details .product-description .product-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .wrapper main section.product-details .product-description .product-header .product-name h4 {
+  font-size: 0.7em;
+  margin: 0 auto 0.5em;
+  font-weight: 500;
+  color: #247fd1;
+}
+body .wrapper main section.product-details .product-description .product-header .product-name h3 {
+  color: #401b34;
+  font-size: 0.9em;
+  margin: 0 auto;
+}
+body .wrapper main section.product-details .product-description .product-header .product-editor-section {
+  border-top: 1px solid #c9c9c9;
+  border-bottom: 1px solid #c9c9c9;
+  margin: 30px 0;
+  padding: 5px 0 7px 0;
+}
+body .wrapper main section.product-details .product-description .product-header .product-editor-section button.function-button {
+  box-shadow: none;
+  background: none;
   margin: 0;
+  text-align: center;
+  width: 50px;
 }
-body .wrapper main section.products .product-tile .name .favourites i {
-  font-size: 0.6em;
-  line-height: 1;
-  margin: 0 5px;
+body .wrapper main section.product-details .product-description .product-header .product-editor-section button.function-button i {
+  color: #325032;
+  font-size: 1.3em;
 }
-body .wrapper main section.products .product-tile .name .favourites.clicked i {
+body .wrapper main section.product-details .product-description .product-favourites {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5em auto;
+}
+body .wrapper main section.product-details .product-description .product-favourites i {
+  color: #a74713;
+}
+body .wrapper main section.product-details .product-description .product-favourites h6 {
+  margin: 0 0 0 10px;
+}
+body .wrapper main section.product-details .product-description .product-favourites.clicked i {
   font-weight: 600;
 }
-body .wrapper main section.add-product-section {
-  background: #fff;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.75);
-  height: auto;
-  left: max(5%, 50% - 225px);
-  max-width: 450px;
-  position: absolute;
-  top: 20%;
-  width: 90%;
-  z-index: 80;
+body .wrapper main section.product-details .product-description .product-ingredients p {
+  font-size: 0.6em;
+  font-weight: 300;
 }
-body .wrapper main section.add-product-section h4 {
-  color: #387323;
-  margin: 45px auto 30px auto;
+body .wrapper main section.product-details .product-description .product-ingredients p span {
+  font-weight: 500;
 }
-body .wrapper main section.add-product-section .add-product-form form input,
-body .wrapper main section.add-product-section .add-product-form form textarea,
-body .wrapper main section.add-product-section .add-product-form form button.function-button {
-  width: 90%;
+body .wrapper main section.product-details .modal#edit-product-modal h4 {
+  color: #247fd1;
+}
+body .wrapper main section.product-details .modal#edit-product-modal .form-wrapper form input[name=id] {
+  display: none;
+}
+body .wrapper main section.product-details .modal#edit-product-modal .form-wrapper form button.function-button {
+  width: 40%;
+}
+body .wrapper main section.product-details .modal#remove-product-modal h4 {
+  color: #a74713;
+}
+body .wrapper main section.product-details .modal#remove-product-modal p {
+  margin-bottom: 3em;
+}
+body .wrapper main section.product-details .modal#remove-product-modal .form-wrapper form input {
+  display: none;
+}
+body .wrapper main section.product-details .modal#remove-product-modal .form-wrapper form button.function-button {
+  width: 40%;
 }
 body .wrapper main section.contact-section .contact-item {
   margin: 0 0 30px 0;
@@ -371,15 +483,13 @@ body .wrapper main section.contact-section .contact-item h5 {
 }
 body .wrapper footer {
   align-items: center;
+  background: #387323;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-top: 30px;
   padding: 30px 30px 15px 30px;
   width: 100%;
-}
-body .wrapper footer.footer-bg {
-  background: #387323;
 }
 body .wrapper footer .logo {
   display: flex;
@@ -388,6 +498,9 @@ body .wrapper footer .logo {
 }
 body .wrapper footer .logo img {
   width: 100%;
+}
+body .wrapper footer .logo img.logo-black {
+  display: none;
 }
 body .wrapper footer .copyrights p {
   color: #fff;
@@ -403,6 +516,10 @@ body .wrapper .overlay {
   position: fixed;
   width: 100%;
   z-index: 70;
+  display: none;
+}
+body .wrapper .overlay.visible {
+  display: block;
 }
 
 @media only screen and (min-width: 500px) {
@@ -431,10 +548,34 @@ body .wrapper .overlay {
   body .wrapper main section.products .product-tile .image {
     height: 20vw;
   }
-  body .wrapper main section.add-product-section .add-product-form form input,
-  body .wrapper main section.add-product-section .add-product-form form textarea,
-  body .wrapper main section.add-product-section .add-product-form form button.function-button {
-    width: 280px;
+  body .wrapper main section.product-details {
+    flex-direction: row;
+  }
+  body .wrapper main section.product-details .product-image {
+    width: 40%;
+    text-align: right;
+  }
+  body .wrapper main section.product-details .product-image img {
+    margin: 0 0.5em 0 0;
+    max-width: 450px;
+  }
+  body .wrapper main section.product-details .product-description {
+    width: 60%;
+    text-align: left;
+  }
+  body .wrapper main section.product-details .product-description .product-header {
+    flex-direction: row;
+  }
+  body .wrapper main section.product-details .product-description .product-header .product-editor-section {
+    margin: 0 30px 0 0;
+    border: none;
+    display: flex;
+    justify-content: center;
+    width: 90px;
+  }
+  body .wrapper main section.product-details .product-description .product-favourites {
+    justify-content: left;
+    margin: 1em 0;
   }
   body .wrapper footer {
     flex-direction: row;

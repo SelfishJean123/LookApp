@@ -1,4 +1,4 @@
-const favouritesButtons = document.querySelectorAll(".product-tile .favourites");
+const favouriteDetailsButton = document.querySelector(".product-details .product-favourites");
 
 function checkFavourites() {
   const favourites = this;
@@ -6,9 +6,9 @@ function checkFavourites() {
   const id = container.getAttribute("id");
 
   fetch(`/favourites/${id}`).then(function () {
-    favourites.children[0].innerHTML = parseInt(favourites.children[0].innerHTML) + 1;
+    favourites.children[1].innerHTML = parseInt(favourites.children[1].innerHTML) + 1;
     favourites.classList.add("clicked");
   });
 }
 
-favouritesButtons.forEach((button) => button.addEventListener("click", checkFavourites));
+favouriteDetailsButton.addEventListener("click", checkFavourites);
