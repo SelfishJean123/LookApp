@@ -1,8 +1,8 @@
-const favouriteDetailsButton = document.querySelector(".product-details .product-favourites");
+const favouriteDetailsButton = document.querySelector("#product-favourites");
 
 function checkFavourites() {
   const favourites = this;
-  const container = favourites.parentElement.parentElement;
+  const container = favourites.parentElement;
   const id = container.getAttribute("id");
 
   fetch(`/favourites/${id}`).then(function () {

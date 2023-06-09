@@ -60,6 +60,7 @@
             <div class="form-wrapper">
               <form action="addProduct" method="POST" enctype="multipart/form-data">
                 <input name="name" type="text" placeholder="Product's name" />
+                <input name="brand" type="text" placeholder="Product's brand" />
                 <textarea name="ingredients" cols="30" rows="5" placeholder="Product's ingredients"></textarea>
                 <input name="file" type="file" placeholder="Product's image" class="upload-file-input" />
                 <p class="form-messages">
@@ -85,17 +86,18 @@
 </body>
 
 <template id="product-template">
-  <div class='product-tile'>
-    <div class='image'>
-      <img src='' alt='' />
+  <div class="product-tile">
+    <div class="image">
+      <img src="" alt="" />
     </div>
-    <div class='name'>
+
+    <div class="name">
       <h5></h5>
-      <div class="favourites">
-        <h6>
-        </h6>
-        <i class="fa-regular fa-heart"></i>
-      </div>
+
+      <form action="productdetails" method="POST" enctype="multipart/form-data">
+        <input name="id" type="text" value="<?= $product->getId(); ?>" />
+        <button type="submit" class="function-button">Details</button>
+      </form>
     </div>
   </div>
 </template>

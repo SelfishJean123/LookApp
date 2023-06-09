@@ -28,10 +28,10 @@ class ProductController extends AppController
 
     public function productdetails()
     {
-            return $this->render('productdetails', [
-                'product' => $this->productRepository->getProduct($_POST['id']),
-                'messages' => $this->message
-            ]);
+        return $this->render('productdetails', [
+            'product' => $this->productRepository->getProduct($_POST['id']),
+            'messages' => $this->message
+        ]);
     }
 
     public function addProduct()
@@ -43,7 +43,7 @@ class ProductController extends AppController
             );
 
             // TODO create new project object and save it in database
-            $product = new Product($_POST['brand'], $_POST['name'], $_POST['ingredients'], $_FILES['file']['name'], $_POST['favourites']);
+            $product = new Product($_POST['name'], $_POST['ingredients'], $_POST['brand'], $_FILES['file']['name'], $_POST['favourites']);
             $this->productRepository->addProduct($product);
 
             return $this->render('products', [

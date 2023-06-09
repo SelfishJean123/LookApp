@@ -42,7 +42,7 @@
             <?php } ?>
           </div>
 
-          <div class="product-favourites">
+          <div id="product-favourites">
             <i class="fa-regular fa-heart"></i>
 
             <h6>

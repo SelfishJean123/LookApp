@@ -150,6 +150,7 @@ body .wrapper main section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
   max-width: 1200px;
   text-align: center;
 }
@@ -425,7 +426,7 @@ body .wrapper main section.product-details .product-description .product-header 
   color: #325032;
   font-size: 1.3em;
 }
-body .wrapper main section.product-details .product-description .product-favourites {
+body .wrapper main section.product-details .product-description #product-favourites {
   cursor: pointer;
   display: flex;
   flex-direction: row;
@@ -433,13 +434,13 @@ body .wrapper main section.product-details .product-description .product-favouri
   justify-content: center;
   margin: 0 auto 1.5em auto;
 }
-body .wrapper main section.product-details .product-description .product-favourites i {
+body .wrapper main section.product-details .product-description #product-favourites i {
   color: #a74713;
 }
-body .wrapper main section.product-details .product-description .product-favourites h6 {
+body .wrapper main section.product-details .product-description #product-favourites h6 {
   margin: 0 0 0 10px;
 }
-body .wrapper main section.product-details .product-description .product-favourites.clicked i {
+body .wrapper main section.product-details .product-description #product-favourites.clicked i {
   font-weight: 600;
 }
 body .wrapper main section.product-details .product-description .product-ingredients p {
@@ -573,7 +574,7 @@ body .wrapper .overlay.visible {
     justify-content: center;
     width: 90px;
   }
-  body .wrapper main section.product-details .product-description .product-favourites {
+  body .wrapper main section.product-details .product-description #product-favourites {
     justify-content: left;
     margin: 1em 0;
   }

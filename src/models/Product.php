@@ -2,21 +2,21 @@
 
 class Product
 {
-    private $id;
-    private $brand;
     private $name;
     private $ingredients;
+    private $brand;
     private $file;
     private $favourites;
+    private $id;
 
-    public function __construct($id = null, $brand, $name, $ingredients, $file, $favourites = 0)
+    public function __construct($name, $ingredients, $brand, $file, $favourites = 0, $id = null)
     {
-        $this->id = $id;
-        $this->brand = $brand;
         $this->name = $name;
         $this->ingredients = $ingredients;
+        $this->brand = $brand;
         $this->file = $file;
         $this->favourites = $favourites;
+        $this->id = $id;
     }
 
     public function getId()
