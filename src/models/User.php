@@ -5,21 +5,24 @@ class User
     private $name;
     private $surname;
     private $mobile;
+    private $role;
     private $email;
     private $password;
 
     public function __construct(
-        string $email,
-        string $password,
         string $name,
         string $surname,
-        string $mobile
+        string $mobile,
+        string $role,
+        string $email,
+        string $password
     ) {
-        $this->email = $email;
-        $this->password = $password;
         $this->name = $name;
         $this->surname = $surname;
         $this->mobile = $mobile;
+        $this->role = $role;
+        $this->email = $email;
+        $this->password = $password;
     }
 
     public function getName(): string
@@ -50,6 +53,16 @@ class User
     public function setMobile($mobile): void
     {
         $this->mobile = $mobile;
+    }
+
+    public function getRole(): string
+    {
+        return $this->role;
+    }
+
+    public function setRole($role): void
+    {
+        $this->role = $role;
     }
 
     public function getEmail(): string

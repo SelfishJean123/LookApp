@@ -11,10 +11,16 @@
 
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="signin">Sign In</a></li>
-      <li><a href="signup">Sign Up</a></li>
+      <?php if (!$_SESSION) { ?>
+        <li><a href="signin">Sign In</a></li>
+        <li><a href="signup">Sign Up</a></li>
+      <?php } else { ?>
+        <li><a href="signout">Sign Out</a></li>
+      <?php } ?>
       <li><a href="about">About Look Up</a></li>
-      <li><a href="products">Products</a></li>
+      <?php if ($_SESSION['ROLE'] == 'viewer' || $_SESSION['ROLE'] == 'editor') { ?>
+        <li><a href="products">Products</a></li>
+      <?php } ?>
       <li><a href="contact">Contact</a></li>
     </ul>
   </label>

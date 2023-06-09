@@ -19,6 +19,11 @@ class DefaultController extends AppController
         $this->render('signup');
     }
 
+    public function signout()
+    {
+        $this->render('signout');
+    }
+
     public function contact()
     {
         $this->render('contact');

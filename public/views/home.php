@@ -8,11 +8,6 @@
 <body>
   <div class="wrapper bg">
     <?php include('shared/header.php') ?>
-
-    <footer>
-      <a href="/" class="logo">
-        <img src="public/img/logo-black.svg" alt="Look Up logo" />
-      </a>
-    </footer>
+    <?php include('shared/footer.php') ?>
   </div>
 </body>
