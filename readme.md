@@ -1,8 +1,8 @@
-### Look Up
+## Look Up
 Aplikacja webowa, służąca do przeglądania produktów kosmetycznych.
 
 
-### Wymagania (technologie)
+## Wymagania (technologie)
 - Docker (wersja 3.X)
 - HTML5
 - CSS3
@@ -11,15 +11,15 @@ Aplikacja webowa, służąca do przeglądania produktów kosmetycznych.
 - PostgreSQL (wersja 15.X)
 
 
-### Instalacja
+## Instalacja
 1. Sklonuj repozytorium na swój dysk lokalny oraz zainstaluj potrzebne technologie.
 2. Z poziomu katalogu głównego uruchom docker komendą docker-compose up.
 3. Skonfiguruj połączenie z bazą danych PostgreSQL.
 4. Otwórz aplikację lokalnie pod adresem [http://localhost:8080/].
 
 
-### Struktura projektu
-# Pliki
+## Struktura projektu
+### Pliki
 - `/index.php` - plik główny aplikacji
 - `/Routing.php` - konfiguracja routingu
 - `/Database.php` - konfiguracja bazy danych
@@ -27,7 +27,7 @@ Aplikacja webowa, służąca do przeglądania produktów kosmetycznych.
 - `/docker-compose.yml` - konfiguracja Dockera
 - `/lookup-diagram-erd.drawio.pdf` - diagram ERD bazy danych
 
-# Katalogi
+### Katalogi
 - `/public/views` - widoki (z rozszerzeniem .php)
 - `/public/views/shared` - widoki współdzielone
 - `/public/css` - pliki SCSS i CSS
@@ -39,7 +39,7 @@ Aplikacja webowa, służąca do przeglądania produktów kosmetycznych.
 - `/src/models` - modele dla kontrolerów i repozytoriów backendu (z rozszczeniem .php)
 
 
-### Użycie
+## Użycie
 1. Niezalogowani użytkownicy mają dostęp do widoków: Home, About Look Up oraz Contact.
 2. Przeglądanie oraz przeszukiwanie bazy produktów (widok Products) dostępne jest dla wszystkich zalogowanych użytkowników.
     Dostępne informacje o produktach, to: nazwa, marka, skład, zdjęcie, liczba polubień.
@@ -48,9 +48,9 @@ Aplikacja webowa, służąca do przeglądania produktów kosmetycznych.
     Edycja i usuwanie - po przejściu z widoku Products do widoku Product Details.
 
 
-### Autor
+## Autor
 Joanna Hornung [https://github.com/SelfishJean123]
 
 
-### Licencja
+## Licencja
 Ten projekt jest objęty licencją Freeware.
