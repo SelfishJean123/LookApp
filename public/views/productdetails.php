@@ -68,9 +68,9 @@
 
             <div class="form-wrapper">
               <form action="editProduct" method="POST" enctype="multipart/form-data">
-                <input name="id" type="text" id="<?= $product->getId(); ?>" />
-
+                <input name="id" type="text" value="<?= $product->getId(); ?>" />
                 <input name="name" type="text" value="<?= $product->getName(); ?>" placeholder="Product's name" />
+                <input name="brand" type="text" value="<?= $product->getBrand(); ?>" placeholder="Product's brand" />
                 <textarea name="ingredients" cols="30" rows="5"
                   placeholder="Product's ingredients"><?= $product->getIngredients(); ?></textarea>
                 <input name="file" type="file" placeholder="Product's image" class="upload-file-input" />
