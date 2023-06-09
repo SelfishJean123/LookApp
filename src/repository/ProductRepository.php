@@ -20,6 +20,7 @@ class ProductRepository extends Repository
         }
 
         return new Product(
+            $product['id'],
             $product['brand'],
             $product['name'],
             $product['ingredients'],
@@ -40,11 +41,11 @@ class ProductRepository extends Repository
         $assignedById = 1;
 
         $stmt->execute([
-            $product->getBrand(),
             $product->getName(),
             $product->getIngredients(),
-            $product->getFile(),
             $product->getFavourites(),
+            $product->getBrand(),
+            $product->getFile(),
             $date->format('Y-m-d'),
             $assignedById
         ]);

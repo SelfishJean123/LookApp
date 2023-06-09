@@ -30,6 +30,8 @@
             <input name="mobile" type="text" placeholder="Mobile" />
             <input name="email" type="email" placeholder="Email" />
 
+            <input name="role" type="text" placeholder="Role" />
+
             <input name="password" type="password" placeholder="Password" />
             <input name="confirmedPassword" type="password" placeholder="Confirm password" />
 

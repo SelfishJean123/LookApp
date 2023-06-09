@@ -30,8 +30,12 @@ class SecurityController extends AppController
             return $this->render('signin', ['messages' => ['Wrong password!']]);
         }
 
-        $url = "http://$_SERVER[HTTP_HOST]";
-        header("Location: {$url}/index");
+        session_start();
+        $_SESSION['ROLE'] = $user->getRole();
+        $_SESSION['NAME'] = $user->getName();
+
+        header("Location:products");
+        die();
     }
 
     public function signup()
@@ -42,22 +46,38 @@ class SecurityController extends AppController
             return $this->render('signup');
         }
 
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $confirmedPassword = $_POST['confirmedPassword'];
         $name = $_POST['name'];
         $surname = $_POST['surname'];
         $mobile = $_POST['mobile'];
+        $role = $_POST['role'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $confirmedPassword = $_POST['confirmedPassword'];
 
         if ($password !== $confirmedPassword) {
             return $this->render('signup', ['messages' => ['You have provided two different passwords!']]);
         }
 
         // TODO try to use better hash function
-        $user = new User($email, md5($password), $name, $surname, $mobile);
+        $user = new User($name, $surname, $mobile, $role, $email, md5($password));
+
+        $user->setName($name);
+        $user->setSurname($surname);
         $user->setMobile($mobile);
+        $user->setRole($role);
+        
         $userRepository->addUser($user);
 
         return $this->render('signin', ['messages' => ['You have been succesfully signed up!']]);
+    }
+
+    public function signout()
+    {
+        session_start();
+        session_unset();
+        session_destroy();
+
+        header("Location:signin");
+        die();
     }
 }

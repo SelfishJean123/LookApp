@@ -26,6 +26,14 @@ class ProductController extends AppController
         $this->render('products', ['products' => $products]);
     }
 
+    public function productdetails()
+    {
+            return $this->render('productdetails', [
+                'product' => $this->productRepository->getProduct($_POST['id']),
+                'messages' => $this->message
+            ]);
+    }
+
     public function addProduct()
     {
         if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
