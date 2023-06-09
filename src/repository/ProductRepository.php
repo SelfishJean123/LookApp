@@ -20,12 +20,12 @@ class ProductRepository extends Repository
         }
 
         return new Product(
-            $product['id'],
-            $product['brand'],
             $product['name'],
             $product['ingredients'],
+            $product['brand'],
             $product['file'],
-            $product['favourites']
+            $product['favourites'],
+            $product['id']
         );
     }
 
@@ -33,19 +33,19 @@ class ProductRepository extends Repository
     {
         $date = new DateTime();
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO products (brand, name, ingredients, file, favourites, created_at, id_assigned_by)
+            INSERT INTO products (name, ingredients, brand, file, favourites, created_at, id_assigned_by)
             VALUES (?, ?, ?, ?, ?, ?, ?)
         ');
 
         //TODO you should get this value from logged user session
-        $assignedById = 1;
+        $assignedById = 9;
 
         $stmt->execute([
             $product->getName(),
             $product->getIngredients(),
-            $product->getFavourites(),
             $product->getBrand(),
             $product->getFile(),
+            $product->getFavourites(),
             $date->format('Y-m-d'),
             $assignedById
         ]);
@@ -60,12 +60,12 @@ class ProductRepository extends Repository
         $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($products as $product) {
             $result[] = new Product(
-                $product['id'],
-                $product['brand'],
                 $product['name'],
                 $product['ingredients'],
+                $product['brand'],
                 $product['file'],
-                $product['favourites']
+                $product['favourites'],
+                $product['id']
             );
         }
 

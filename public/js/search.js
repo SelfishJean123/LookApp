@@ -42,8 +42,8 @@ function createProduct(product) {
   const nameSelector = clone.querySelector("h5");
   nameSelector.innerHTML = product.name;
 
-  const favouritesSelector = clone.querySelector("h6");
-  favouritesSelector.innerHTML = product.favourites;
+  const idInputSelector = clone.querySelector("input");
+  idInputSelector.value = product.id;
 
   productsContainer.appendChild(clone);
 }
