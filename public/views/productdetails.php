@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php if ($_SESSION['ROLE'] == 'viewer' || $_SESSION['ROLE'] == 'editor') { ?>
 
 <!DOCTYPE html>
 
@@ -118,3 +119,5 @@
     <div id="productdetails-overlay" class="overlay"></div>
   </div>
 </body>
+
+<?php } ?>

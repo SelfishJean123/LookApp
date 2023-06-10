@@ -383,6 +383,7 @@ body {
         &.team {
           flex-direction: row;
           justify-content: space-between;
+          max-width: 500px;
 
           .team-member {
             display: flex;
