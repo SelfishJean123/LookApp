@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php if ($_SESSION['ROLE'] == 'viewer' || $_SESSION['ROLE'] == 'editor') { ?>
 
 <!DOCTYPE html>
 
@@ -101,3 +102,5 @@
     </div>
   </div>
 </template>
+
+<?php } ?>
